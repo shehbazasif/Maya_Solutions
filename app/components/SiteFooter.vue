@@ -38,7 +38,7 @@ const offices = [
 
 <template>
   <footer class="mt-auto border-t border-slate-200 bg-slate-900 text-slate-100">
-    <div class="mx-auto max-w-6xl px-4 py-10 lg:px-6">
+    <div class="mx-auto px-4 py-10 lg:px-6">
       <div
         class="grid gap-8 md:grid-cols-[minmax(0,1.5fr)_repeat(2,minmax(0,1fr))]"
       >

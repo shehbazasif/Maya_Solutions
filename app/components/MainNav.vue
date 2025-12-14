@@ -42,7 +42,7 @@ onBeforeUnmount(() => {
       class="hidden border-b border-slate-100 bg-slate-900/95 text-[11px] text-slate-100 md:block"
     >
       <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-1.5 lg:px-6"
+        class="mx-auto flex items-center justify-between px-4 py-1.5 lg:px-6"
       >
         <div class="flex items-center gap-4">
           <span class="font-medium tracking-wide text-emerald-300">
@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
       ]"
     >
       <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-6"
+        class="mx-auto flex items-center justify-between px-8 py-8 lg:px-6"
       >
         <!-- Logo / brand -->
         <NuxtLink to="/" class="flex items-center gap-3" @click="closeMenu">
@@ -92,7 +92,7 @@ onBeforeUnmount(() => {
 
         <!-- Desktop nav -->
         <nav
-          class="hidden items-center gap-6 text-[13px] font-medium text-slate-700 md:flex"
+          class="hidden items-center gap-6 text-[15px] font-bold text-slate-700 md:flex"
         >
           <NuxtLink
             v-for="link in navLinks"

@@ -1,125 +1,267 @@
 <script setup lang="ts">
 const keyStats = [
   { label: "Countries", value: "3+" },
-  { label: "Core service lines", value: "5" },
-  { label: "Sectors served", value: "10+" },
+  { label: "Core Service Lines", value: "5" },
+  { label: "Sectors Served", value: "10+" },
+];
+
+const services = [
+  {
+    title: "Environmental Services",
+    image: "/images/Environmental-Services.jpg",
+    description:
+      "Environmental assessments, compliance management, monitoring, permitting, audits, and remediation oversight.",
+  },
+  {
+    title: "Sustainability & ESG",
+    image: "/images/services/sustainability.jpg",
+    description:
+      "ESG strategy, carbon reduction, LEED, Mostadam, and Envision certification support for sustainable growth.",
+  },
+  {
+    title: "Waste Management",
+    image: "/images/services/waste.jpg",
+    description:
+      "Innovative waste collection, recycling, segregation, and zero-waste compliance programs.",
+  },
+  {
+    title: "Facilities Management",
+    image: "/images/services/fm.jpg",
+    description:
+      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+  },
+  {
+    title: "Specialized Equipment & Support",
+    image: "/images/services/equipment.jpg",
+    description:
+      "Provision of environmental monitoring equipment, machinery, and on-site operational support.",
+  },
 ];
 </script>
 
 <template>
-  <section
-    class="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-center"
-  >
-    <div>
-      <p
-        class="mb-3 inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700"
-      >
-        Global environmental & sustainability partner
-      </p>
-      <h1
-        class="mb-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
-      >
-        Integrated solutions for environmental compliance and sustainable
-        operations.
-      </h1>
-      <p class="mb-6 max-w-xl text-sm leading-relaxed text-slate-600">
-        MaYa Sustainable Solutions delivers Environmental, Sustainability, Waste
-        Management, Facilities Management, and Equipment services across Saudi
-        Arabia, the United Kingdom and the United States – helping organisations
-        stay compliant, reduce risk, and build resilient assets.
-      </p>
+  <div class="text-slate-800 overflow-hidden">
+    <!-- HERO SECTION -->
+    <section
+      class="relative bg-cover bg-center text-white"
+      style="background-image: url('/images/hero-bg.jpg')"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-emerald-800/70 to-emerald-700/60"
+      ></div>
 
-      <div class="flex flex-wrap gap-3">
-        <NuxtLink
-          to="/contact"
-          class="rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-emerald-300/60 hover:bg-emerald-700"
-        >
-          Talk to our team
-        </NuxtLink>
-        <NuxtLink
-          to="/services"
-          class="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-slate-800 hover:border-emerald-600 hover:text-emerald-700"
-        >
-          Explore services
-        </NuxtLink>
-      </div>
+      <div
+        class="relative max-w-7xl mx-auto px-6 md:px-10 py-28 text-center md:text-left"
+      >
+        <div data-aos="fade-up">
+          <p
+            class="animate mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100"
+          >
+            Engineering a Greener, Smarter Future
+          </p>
 
-      <!-- Key stats -->
-      <div class="mt-8 grid gap-4 text-sm text-slate-700 sm:grid-cols-3">
-        <div
-          v-for="stat in keyStats"
-          :key="stat.label"
-          class="rounded-2xl border border-slate-200 bg-white px-4 py-3"
-        >
-          <div class="text-lg font-semibold text-emerald-700">
-            {{ stat.value }}
-          </div>
-          <div class="text-xs uppercase tracking-wide text-slate-500">
-            {{ stat.label }}
+          <h1
+            class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          >
+            Engineering a Greener, Smarter, <br />
+            <span class="text-emerald-200">Sustainable Tomorrow</span>
+          </h1>
+
+          <p
+            class="max-w-2xl text-base md:text-lg text-emerald-100/90 mb-10 leading-relaxed"
+          >
+            Delivering world-class Environmental, Sustainability, Waste,
+            Facilities, and Specialized Support Services across
+            <span class="font-semibold text-white">KSA, UK, USA</span> and
+            global markets. <br /><br />
+            At
+            <span class="font-semibold text-white"
+              >MaYa Sustainable Solutions</span
+            >, we help organizations build compliant, resilient, and
+            future-ready projects through innovative, integrated, and
+            sustainable solutions.
+          </p>
+
+          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <NuxtLink
+              to="/contact"
+              class="rounded-full bg-white text-emerald-800 px-6 py-3 text-xs font-semibold uppercase tracking-wide shadow-md hover:bg-emerald-100 transition"
+            >
+              Get a Consultation
+            </NuxtLink>
+            <NuxtLink
+              to="/services"
+              class="rounded-full border border-white px-6 py-3 text-xs font-semibold uppercase tracking-wide text-white hover:bg-white hover:text-emerald-700 transition"
+            >
+              Explore Services
+            </NuxtLink>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Hero side panel -->
-    <div
-      class="rounded-3xl border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 p-5 shadow-sm"
+    <!-- ABOUT -->
+    <section class="max-w-7xl mx-auto px-6 md:px-10 py-24">
+      <div data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-emerald-800 mb-6">
+          About MaYa — Global Presence & Mission
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          MaYa Sustainable Solutions is a multi-disciplinary environmental and
+          sustainability consultancy operating across Saudi Arabia, the United
+          Kingdom, the United States, and global markets.
+        </p>
+
+        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Our Mission</h3>
+        <p class="text-slate-600 mb-4 leading-relaxed">
+          We empower organizations with high-quality environmental,
+          sustainability, water, and waste solutions that protect people,
+          enhance performance, and create long-term value.
+        </p>
+
+        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Our Vision</h3>
+        <p class="text-slate-600 leading-relaxed">
+          To create a world where every community, business, and ecosystem
+          thrive through responsible engineering, ethical action, and
+          sustainable innovation — delivering a greener tomorrow for all.
+        </p>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES -->
+    <section class="bg-emerald-200 py-24 px-6 md:px-10">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2
+          data-aos="fade-up"
+          class="text-3xl font-bold text-emerald-800 mb-10"
+        >
+          Core Services Overview
+        </h2>
+
+        <div
+          class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
+          data-aos="fade-up"
+        >
+          <div
+            v-for="service in services"
+            :key="service.title"
+            class="group bg-white rounded-2xl shadow-lg border border-emerald-100 overflow-hidden hover:-translate-y-2 transition-transform"
+          >
+            <img
+              :src="service.image"
+              :alt="service.title"
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="p-6 text-left">
+              <h3 class="font-semibold text-lg text-emerald-700 mb-2">
+                {{ service.title }}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {{ service.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CLIENTS CHOOSE US -->
+    <section
+      class="relative py-24 px-6 md:px-10 bg-gradient-to-br from-white via-emerald-50 to-white"
     >
-      <h2
-        class="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-800"
+      <div class="max-w-7xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-emerald-800 mb-8">
+          Why Clients Choose Us
+        </h2>
+        <ul class="grid gap-4 sm:grid-cols-2 text-slate-700">
+          <li
+            v-for="reason in [
+              'Compliance with global and local environmental standards',
+              'Proven track record with giga-projects and government programs',
+              'Multi-disciplinary technical expertise',
+              'Transparent communication and reporting',
+              'Safety, quality, and long-term value focus',
+              'Fast mobilization and global reach',
+            ]"
+            :key="reason"
+            class="flex items-start gap-3"
+          >
+            <span class="text-emerald-600 text-lg">✔</span>
+            <span>{{ reason }}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="bg-emerald-50 py-24">
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-10 text-center"
+        data-aos="fade-up"
       >
-        How we support your projects
-      </h2>
-      <ul class="space-y-3 text-sm text-slate-700">
-        <li class="flex gap-3">
-          <span
-            class="mt-1 h-6 w-6 shrink-0 rounded-full bg-emerald-600/10 text-center text-xs font-semibold leading-6 text-emerald-700"
+        <h2 class="text-3xl font-bold text-emerald-800 mb-10">
+          Industries We Serve
+        </h2>
+        <div
+          class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-slate-700"
+        >
+          <div
+            v-for="industry in [
+              'Construction & Infrastructure',
+              'Industrial & Manufacturing',
+              'Real Estate & Urban Development',
+              'Oil, Gas & Energy',
+              'Government & Municipalities',
+              'Utilities & Power',
+              'Transportation & Logistics',
+              'Education & Healthcare',
+            ]"
+            :key="industry"
+            class="bg-white rounded-xl py-6 px-4 shadow-sm border border-emerald-100 hover:shadow-md transition"
           >
-            01
-          </span>
-          <div>
-            <p class="font-semibold text-slate-900">
-              Environmental & regulatory compliance
-            </p>
-            <p class="text-xs text-slate-600">
-              Navigate national and international requirements with clear,
-              actionable guidance and robust documentation.
-            </p>
+            <p class="font-medium">{{ industry }}</p>
           </div>
-        </li>
-        <li class="flex gap-3">
-          <span
-            class="mt-1 h-6 w-6 shrink-0 rounded-full bg-emerald-600/10 text-center text-xs font-semibold leading-6 text-emerald-700"
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section
+      class="bg-gradient-to-r from-emerald-700 to-emerald-500 py-24 text-center text-white"
+      data-aos="zoom-in"
+    >
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">
+          Ready to Build a More Sustainable Future?
+        </h2>
+        <p class="mb-8 text-emerald-50">
+          Our team is here to support your project from advisory to execution.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <NuxtLink
+            to="/contact"
+            class="rounded-full bg-white text-emerald-800 px-6 py-3 text-xs font-semibold uppercase tracking-wide hover:bg-emerald-100 transition"
           >
-            02
-          </span>
-          <div>
-            <p class="font-semibold text-slate-900">
-              Operational efficiency & risk reduction
-            </p>
-            <p class="text-xs text-slate-600">
-              Integrated services that streamline site operations while managing
-              environmental and safety risk.
-            </p>
-          </div>
-        </li>
-        <li class="flex gap-3">
-          <span
-            class="mt-1 h-6 w-6 shrink-0 rounded-full bg-emerald-600/10 text-center text-xs font-semibold leading-6 text-emerald-700"
+            Contact Us Today
+          </NuxtLink>
+          <NuxtLink
+            to="/contact"
+            class="rounded-full border border-white px-6 py-3 text-xs font-semibold uppercase tracking-wide text-white hover:bg-white hover:text-emerald-700 transition"
           >
-            03
-          </span>
-          <div>
-            <p class="font-semibold text-slate-900">
-              Measurable sustainability outcomes
-            </p>
-            <p class="text-xs text-slate-600">
-              From strategy and design to reporting, we embed sustainability and
-              ESG into everyday decision-making.
-            </p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+            Speak With Our Experts
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER MINI SUMMARY -->
+    <section class="bg-slate-900 text-emerald-100 py-10 text-center text-sm">
+      <p class="max-w-3xl mx-auto px-6" data-aos="fade-up">
+        MaYa Sustainable Solutions delivers trusted, compliant, and
+        future-focused environmental, sustainability, waste, facilities, and
+        operational services globally. We are committed to excellence,
+        innovation, and long-term value.
+      </p>
+    </section>
+  </div>
 </template>
