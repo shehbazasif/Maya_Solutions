@@ -70,9 +70,7 @@ onBeforeUnmount(() => {
         isScrolled ? 'shadow-sm border-slate-200' : 'border-slate-100',
       ]"
     >
-      <div
-        class="mx-auto flex items-center justify-between px-8 py-8 lg:px-6"
-      >
+      <div class="mx-auto flex items-center justify-between px-8 py-8 lg:px-6">
         <!-- Logo / brand -->
         <NuxtLink to="/" class="flex items-center gap-3" @click="closeMenu">
           <div

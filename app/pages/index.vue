@@ -14,25 +14,25 @@ const services = [
   },
   {
     title: "Sustainability & ESG",
-    image: "/images/services/sustainability.jpg",
+    image: "/images/sustainable-development-goals-still-life.jpg",
     description:
       "ESG strategy, carbon reduction, LEED, Mostadam, and Envision certification support for sustainable growth.",
   },
   {
     title: "Waste Management",
-    image: "/images/services/waste.jpg",
+    image: "/images/waste-management.jpg",
     description:
       "Innovative waste collection, recycling, segregation, and zero-waste compliance programs.",
   },
   {
     title: "Facilities Management",
-    image: "/images/services/fm.jpg",
+    image: "/images/facilitate-management.jpg",
     description:
       "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
   },
   {
     title: "Specialized Equipment & Support",
-    image: "/images/services/equipment.jpg",
+    image: "/images/special-equipments.jpg",
     description:
       "Provision of environmental monitoring equipment, machinery, and on-site operational support.",
   },
@@ -44,7 +44,7 @@ const services = [
     <!-- HERO SECTION -->
     <section
       class="relative bg-cover bg-center text-white"
-      style="background-image: url('/images/hero-bg.jpg')"
+      style="background-image: url(&quot;/images/hero-bg.jpg&quot;)"
     >
       <div
         class="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-emerald-800/70 to-emerald-700/60"
