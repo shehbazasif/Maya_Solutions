@@ -43,8 +43,8 @@ const services = [
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
     <section
-      class="relative bg-cover bg-center text-white"
-      style="background-image: url(&quot;/images/hero-bg.jpg&quot;)"
+      class="mx-w-5xl relative bg-cover bg-center text-white"
+      style="background-image: url('/images/environmental-image.jpg')"
     >
       <div
         class="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-emerald-800/70 to-emerald-700/60"
@@ -129,13 +129,13 @@ const services = [
     </section>
 
     <!-- CORE SERVICES -->
-    <section class="bg-emerald-200 py-24 px-6 md:px-10">
+    <section class="bg-emerald-50 py-24 px-6 md:px-10">
       <div class="max-w-7xl mx-auto text-center">
         <h2
           data-aos="fade-up"
-          class="text-3xl font-bold text-emerald-800 mb-10"
+          class="text-5xl font-bold text-emerald-800 mb-10"
         >
-          Core Services Overview
+          CORE SERVICES OVERVIEW
         </h2>
 
         <div
