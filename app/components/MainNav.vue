@@ -55,10 +55,10 @@ onBeforeUnmount(() => {
         </div>
         <div class="flex items-center gap-4">
           <a href="mailto:info@maya-intl.com" class="hover:text-emerald-300">
-            info@maya-intl.com
+            info@mayassc.com
           </a>
           <span class="h-3 w-px bg-slate-600" />
-          <span>+1234556</span>
+          <span>+966 53 100 8586</span>
         </div>
       </div>
     </div>

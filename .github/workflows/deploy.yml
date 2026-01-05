@@ -1,0 +1,28 @@
+name: Deploy to Namecheap via FTP
+
+on:
+  push:
+    branches:
+      - main  # jab tu main branch pe push kare
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Nuxt project
+        run: npm run generate
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.yourdomain.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: .output/public
+          server-dir: /public_html
