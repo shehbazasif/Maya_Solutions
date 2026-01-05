@@ -43,6 +43,7 @@ const services = [
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
     <section
+      data-aos="fade-up"
       class="mx-w-5xl relative bg-cover bg-center text-white"
       style="background-image: url('/images/environmental-image.jpg')"
     >
