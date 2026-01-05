@@ -3,11 +3,12 @@ name: Deploy to Namecheap via FTP
 on:
   push:
     branches:
-      - main  
+      - main  # Jab tu main branch pe push karega, deployment start hogi
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,8 +22,8 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.yourdomain.com
+          server: ftp.mayassc.com         
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: .output/public/
-          server-dir: /public_html
+          server-dir: /public_html/
