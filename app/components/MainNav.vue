@@ -70,13 +70,15 @@ onBeforeUnmount(() => {
         isScrolled ? 'shadow-sm border-slate-200' : 'border-slate-100',
       ]"
     >
-      <div class="mx-auto flex items-center justify-between px-8 py-8 lg:px-6">
+      <div class="max-w-[1462px] mx-auto flex items-center justify-between py-6 md:px-4 md:py-8">
         <!-- Logo / brand -->
         <NuxtLink to="/" class="flex items-center gap-3" @click="closeMenu">
-          <div
-            class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-lg font-semibold text-white"
-          >
-            M
+          <div class="h-10 w-10 overflow-hidden rounded-xl">
+            <img
+              src="/images/logo.png"
+              alt="MaYa Sustainable Solutions Logo"
+              class="h-full w-full object-cover"
+            />
           </div>
           <div class="leading-tight">
             <div class="text-sm font-semibold tracking-wide text-slate-900">

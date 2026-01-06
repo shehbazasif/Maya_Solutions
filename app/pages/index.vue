@@ -43,8 +43,8 @@ const services = [
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
     <section
-      data-aos="fade-up"
-      class="mx-w-5xl relative bg-cover bg-center text-white"
+    
+      class="mx-w-5xl relative bg-cover bg-center text-white "
       style="background-image: url('/images/environmental-image.jpg')"
     >
       <div
@@ -56,7 +56,7 @@ const services = [
       >
         <div data-aos="fade-up">
           <p
-            class="animate mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100"
+            class=" mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100"
           >
             Engineering a Greener, Smarter Future
           </p>
@@ -102,30 +102,30 @@ const services = [
     </section>
 
     <!-- ABOUT -->
-    <section class="max-w-7xl mx-auto px-6 md:px-10 py-24">
+    <section class="max-w-12xl text-center mx-auto md:px-10 py-24">
       <div data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-emerald-800 mb-6">
-          About MaYa — Global Presence & Mission
-        </h2>
-        <p class="text-slate-600 leading-relaxed mb-6">
+        <h1 class="text-5xl  font-bold text-emerald-800 mb-6">
+          About MaYa Global Presence & Mission
+        </h1>
+        <p class="text-slate-600 font-semibold leading-relaxed mb-6">
           MaYa Sustainable Solutions is a multi-disciplinary environmental and
           sustainability consultancy operating across Saudi Arabia, the United
           Kingdom, the United States, and global markets.
         </p>
 
-        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Our Mission</h3>
-        <p class="text-slate-600 mb-4 leading-relaxed">
+        <h2 class="text-2xl font-bold text-emerald-700 mb-2">Our Mission</h2>
+        <h3 class="text-slate-600 font-semibold  mb-4 leading-relaxed">
           We empower organizations with high-quality environmental,
           sustainability, water, and waste solutions that protect people,
           enhance performance, and create long-term value.
-        </p>
+        </h3>
 
-        <h3 class="text-xl font-semibold text-emerald-700 mb-2">Our Vision</h3>
-        <p class="text-slate-600 leading-relaxed">
+        <h2 class="text-2xl font-bold text-emerald-700 mb-2">Our Vision</h2>
+        <h3 class="text-slate-600  font-semibold leading-relaxed">
           To create a world where every community, business, and ecosystem
           thrive through responsible engineering, ethical action, and
           sustainable innovation — delivering a greener tomorrow for all.
-        </p>
+        </h3>
       </div>
     </section>
 

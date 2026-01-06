@@ -2,10 +2,10 @@
 
 <template>
   <section
-    class="grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start"
+    class="mx-w-7xl grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start"
   >
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+      <p class="text-4xl font-bold uppercase tracking-wide text-emerald-700">
         Who we are
       </p>
       <h1

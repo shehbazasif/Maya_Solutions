@@ -71,12 +71,12 @@ const offices = [
                 href="mailto:info@maya-intl.com"
                 class="ml-1 text-emerald-300 hover:text-emerald-200"
               >
-                info@maya-intl.com
+                info@mayassc.com
               </a>
             </p>
             <p class="mt-1">
               <span class="font-semibold text-slate-50">Phone:</span>
-              <span class="ml-1">+1234556</span>
+              <span class="ml-1">++966 53 100 8586</span>
             </p>
           </div>
         </div>
