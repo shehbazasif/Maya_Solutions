@@ -43,56 +43,45 @@ const services = [
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
     <section
-    
-      class="mx-w-5xl relative bg-cover bg-center text-white "
+      class="mx-w-5xl relative bg-cover bg-center text-white"
       style="background-image: url('/images/environmental-image.jpg')"
     >
       <div
-        class="absolute inset-0 bg-gradient-to-b from-emerald-900/80 via-emerald-800/70 to-emerald-700/60"
+        class="absolute inset-0 bg-gradient-to-b from-gray-700 via-emerald-800/70 to-white-700/60"
       ></div>
 
-      <div
-        class="relative max-w-7xl mx-auto px-6 md:px-10 py-28 text-center md:text-left"
-      >
+      <div class="relative max-w-7xl mx-auto px-6 md:px-10 py-28 text-center">
         <div data-aos="fade-up">
           <p
-            class=" mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-100"
+            class="mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xm font-semibold uppercase tracking-wide text-emerald-100"
           >
             Engineering a Greener, Smarter Future
           </p>
 
           <h1
-            class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            class="mb-6 text-4xl md:text-7xl lg:text-7xl font-bold leading-tight"
           >
-            Engineering a Greener, Smarter, <br />
-            <span class="text-emerald-200">Sustainable Tomorrow</span>
+            Shaping Tomorrow’s <span class="text-green-400">World</span> Through
+            <br />
+            <span class="text-green-400">Sustainable Tomorrow</span>
+          </h1>
+          <h1 class="mb-8 text-2xl font-semibold leading-tight">
+            We deliver smart, practical environmental solutions that promote
+            growth while protecting the planet’s natural balance. Partner with
+            us to meet every sustainability goal and ensure long-term
+            environmental responsibility.
           </h1>
 
-          <p
-            class="max-w-2xl text-base md:text-lg text-emerald-100/90 mb-10 leading-relaxed"
-          >
-            Delivering world-class Environmental, Sustainability, Waste,
-            Facilities, and Specialized Support Services across
-            <span class="font-semibold text-white">KSA, UK, USA</span> and
-            global markets. <br /><br />
-            At
-            <span class="font-semibold text-white"
-              >MaYa Sustainable Solutions</span
-            >, we help organizations build compliant, resilient, and
-            future-ready projects through innovative, integrated, and
-            sustainable solutions.
-          </p>
-
-          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div class="flex flex-wrap gap-4 justify-center">
             <NuxtLink
               to="/contact"
-              class="rounded-full bg-white text-emerald-800 px-6 py-3 text-xs font-semibold uppercase tracking-wide shadow-md hover:bg-emerald-100 transition"
+              class="rounded-full bg-green-400 text-white-400 px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:text-white transition"
             >
-              Get a Consultation
+              Contact Now!
             </NuxtLink>
             <NuxtLink
               to="/services"
-              class="rounded-full border border-white px-6 py-3 text-xs font-semibold uppercase tracking-wide text-white hover:bg-white hover:text-emerald-700 transition"
+              class="rounded-full border border-white text-white px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:text-white transition"
             >
               Explore Services
             </NuxtLink>
@@ -102,30 +91,67 @@ const services = [
     </section>
 
     <!-- ABOUT -->
-    <section class="max-w-12xl text-center mx-auto md:px-10 py-24">
-      <div data-aos="fade-up">
-        <h1 class="text-5xl  font-bold text-emerald-800 mb-6">
-          About MaYa Global Presence & Mission
-        </h1>
-        <p class="text-slate-600 font-semibold leading-relaxed mb-6">
-          MaYa Sustainable Solutions is a multi-disciplinary environmental and
-          sustainability consultancy operating across Saudi Arabia, the United
-          Kingdom, the United States, and global markets.
-        </p>
+    <section class="max-w-7xl mx-auto py-16 sm:px-6 md:px-5">
+      <h1 class="text-7xl text-center font-bold text-emerald-800 mb-6">
+        About Us
+      </h1>
+      <div class="grid md:grid-cols-2 gap-10 mt-10">
+        <!-- Card 1: Our Mission -->
+        <div
+          class="bg-green-300 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-green-500 transition-smooth rounded-2xl shadow-lg p-8 flex flex-col items-center text-center"
+          data-aos="fade-up"
+        >
+          <!-- Top Circle Icon -->
+          <div
+            class="bg-white text-emerald-700 w-20 h-20 flex items-center justify-center rounded-full mb-6 text-3xl"
+          >
+            🌱
+          </div>
+          <!-- Card Heading -->
+          <h3 class="text-2xl font-bold mb-4 text-emerald-900">Our Mission</h3>
+          <!-- Card Paragraph -->
+          <p class="text-emerald-900 mb-6">
+            We empower organizations with innovative environmental and
+            sustainability solutions that protect people, enhance performance,
+            and create lasting value across all sectors.
+          </p>
+          <!-- Explore More Button -->
+          <a
+            href="/who-we-are"
+            class="bg-white text-green-700 font-semibold px-6 py-2 rounded-full hover:bg-emerald-800 hover:text-white transition-colors"
+          >
+            Explore More
+          </a>
+        </div>
 
-        <h2 class="text-2xl font-bold text-emerald-700 mb-2">Our Mission</h2>
-        <h3 class="text-slate-600 font-semibold  mb-4 leading-relaxed">
-          We empower organizations with high-quality environmental,
-          sustainability, water, and waste solutions that protect people,
-          enhance performance, and create long-term value.
-        </h3>
-
-        <h2 class="text-2xl font-bold text-emerald-700 mb-2">Our Vision</h2>
-        <h3 class="text-slate-600  font-semibold leading-relaxed">
-          To create a world where every community, business, and ecosystem
-          thrive through responsible engineering, ethical action, and
-          sustainable innovation — delivering a greener tomorrow for all.
-        </h3>
+        <!-- Card 2: Our Vision -->
+        <div
+          class="bg-green-300 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-green-500 transition-smooth rounded-2xl shadow-lg p-8 flex flex-col items-center text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <!-- Top Circle Icon -->
+          <div
+            class="bg-emerald-200 text-emerald-700 w-20 h-20 flex items-center justify-center rounded-full mb-6 text-3xl"
+          >
+            🌎
+          </div>
+          <!-- Card Heading -->
+          <h3 class="text-2xl font-bold mb-4 text-emerald-800">Our Vision</h3>
+          <!-- Card Paragraph -->
+          <p class="text-slate-600 mb-6">
+            To create a sustainable world where every community, business, and
+            ecosystem thrive through responsible engineering, ethical action,
+            and innovative environmental solutions.
+          </p>
+          <!-- Explore More Button -->
+          <a
+            href="/who-we-are"
+            class="bg-white text-green-700 font-semibold px-6 py-2 rounded-full hover:bg-emerald-800 hover:text-white transition-colors"
+          >
+            Explore More
+          </a>
+        </div>
       </div>
     </section>
 
@@ -255,14 +281,25 @@ const services = [
       </div>
     </section>
 
+<section class="bg-green-300 py-16 px-5">
+  <h1 class="text-4xl font-bold text-emerald-900 text-center mb-4">
+    Where To Find Us
+  </h1>
+
+  <div class="relative max-w-6xl mx-auto overflow-hidden ">
+
+    <!-- Overlay to hide Google map top bar -->
+    <div class="absolute top-0 left-0 w-full h-16 bg-green-300 z-10"></div>
+
+    <iframe
+      src="https://www.google.com/maps/d/embed?mid=19s4r6ubn65Jvc9urP60AKX0kpzjm47U&ehbc=2E312F"
+      class="w-full h-[600px]"
+      style=""
+      loading="lazy"
+    ></iframe>
+<div class="absolute top-0 left-0 w-full h-5 bg-green-300 z-10"></div>
+  </div>
+</section>
     <!-- FOOTER MINI SUMMARY -->
-    <section class="bg-slate-900 text-emerald-100 py-10 text-center text-sm">
-      <p class="max-w-3xl mx-auto px-6" data-aos="fade-up">
-        MaYa Sustainable Solutions delivers trusted, compliant, and
-        future-focused environmental, sustainability, waste, facilities, and
-        operational services globally. We are committed to excellence,
-        innovation, and long-term value.
-      </p>
-    </section>
   </div>
 </template>

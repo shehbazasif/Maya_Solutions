@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     port: 3005,
   },
 
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/fonts",
+    "@vueuse/nuxt",
+    "@hypernym/nuxt-anime",
+  ],
 
 })

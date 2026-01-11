@@ -37,14 +37,14 @@ const offices = [
 </script>
 
 <template>
-  <footer class="mt-auto border-t border-slate-200 bg-slate-900 text-slate-100">
+  <footer class="mt-auto border-t border-slate-200 bg-slate-900  text-slate-100">
     <div class="mx-auto px-4 py-10 lg:px-6">
       <div
-        class="grid gap-8 md:grid-cols-[minmax(0,1.5fr)_repeat(2,minmax(0,1fr))]"
+        class=" pl-20 grid gap-8 md:grid-cols-[minmax(0,1.5fr)_repeat(2,minmax(0,1fr))]"
       >
         <!-- Brand / summary -->
         <div>
-          <div class="flex items-center gap-3">
+          <div class=" flex items-center gap-3">
             <div
               class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500 text-lg font-semibold text-slate-900"
             >
@@ -149,14 +149,10 @@ const offices = [
     <!-- Bottom bar -->
     <div class="border-t border-slate-800 bg-slate-950">
       <div
-        class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 text-[11px] text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-6"
+        class="mx-auto flex max-w-[1462px] flex-col gap-3  py-4 text-[11px] text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-"
       >
         <p>
           © {{ currentYear }} MaYa Sustainable Solutions. All rights reserved.
-        </p>
-        <p>
-          Brand palette: navy, green & white – reflecting trust, sustainability
-          and clarity.
         </p>
       </div>
     </div>

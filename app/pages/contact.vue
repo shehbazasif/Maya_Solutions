@@ -25,13 +25,13 @@
             href="mailto:info@maya-intl.com"
             class="ml-1 text-emerald-700 hover:underline"
           >
-            info@maya-intl.com
+            info@mayassc.com
           </a>
           <span class="ml-1 text-xs text-slate-500">(placeholder)</span>
         </p>
         <p>
           <span class="font-semibold">Phone:</span>
-          <span class="ml-1">+1234556</span>
+          <span class="ml-1">+966 53 100 8586</span>
         </p>
         <p>
           <span class="font-semibold">Website:</span>
@@ -91,11 +91,9 @@
           type="button"
           class="mt-1 w-full rounded-full bg-emerald-600 px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-emerald-300/60 hover:bg-emerald-700"
         >
-          Submit enquiry (placeholder)
+          Submit enquiry
         </button>
         <p class="mt-1 text-[10px] text-slate-500">
-          This form is a static placeholder. Connect it to your preferred
-          backend or form service to start receiving enquiries.
         </p>
       </form>
     </div>
