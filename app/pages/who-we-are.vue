@@ -1,16 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section
-    class="mx-w-7xl grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start"
-  >
-    <div>
+  <section class="relative bg-slate-50 py-24 px-5">
+  <!-- Optional subtle background image -->
+
+  <div class="relative mx-auto max-w-7xl grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.1fr)] md:items-start">
+    <!-- Left Content -->
+    <div class="space-y-6">
       <p class="text-4xl font-bold uppercase tracking-wide text-emerald-700">
         Who we are
       </p>
-      <h1
-        class="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl"
-      >
+      <h1 class="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
         A specialist partner for environmental, sustainability and FM services.
       </h1>
       <p class="mt-4 text-sm leading-relaxed text-slate-700">
@@ -19,22 +19,21 @@
         Waste Management, Sustainable Building Construction, and Facilities
         Management.
       </p>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+      <p class="text-sm leading-relaxed text-slate-700">
         With a strong presence in Saudi Arabia and registered entities in the UK
         and USA, we combine local regulatory knowledge with global best practice
         to deliver dependable, compliant and efficient outcomes across the asset
         lifecycle.
       </p>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+      <p class="text-sm leading-relaxed text-slate-700">
         Our teams bring hands-on experience of supporting complex construction,
         infrastructure, industrial and public-sector projects – from early-stage
         planning through to operations and optimisation.
       </p>
     </div>
 
-    <div
-      class="space-y-4 rounded-3xl border border-slate-200 bg-white p-5 text-sm text-slate-800"
-    >
+    <!-- Right Content -->
+    <div class="space-y-6 rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-800 shadow-lg transition-transform duration-300 hover:scale-105">
       <h2 class="text-sm font-semibold text-slate-900">
         Why organisations choose MaYa
       </h2>
@@ -67,10 +66,11 @@
 
       <NuxtLink
         to="/services"
-        class="inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-800 hover:border-emerald-600 hover:text-emerald-700"
+        class="inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-800 hover:border-emerald-600 hover:text-emerald-700 transition-colors duration-300"
       >
         Explore our services
       </NuxtLink>
     </div>
-  </section>
+  </div>
+</section>
 </template>

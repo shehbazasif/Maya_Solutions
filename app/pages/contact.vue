@@ -1,4 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const showSuccess = ref(false);
+
+const handleSubmit = async (e: Event) => {
+  e.preventDefault();
+
+  const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  if (res.ok) {
+    form.reset();              // ✅ clear form
+    showSuccess.value = true;  // ✅ show popup
+
+    setTimeout(() => {
+      showSuccess.value = false;
+    }, 3000);
+  }
+};
+
+</script>
 
 <template>
   <section
@@ -46,56 +70,87 @@
 
     <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
       <h2 class="mb-3 text-sm font-semibold text-slate-900">Send us a brief</h2>
-      <form class="space-y-3 text-sm">
-        <div>
-          <label class="mb-1 block text-xs font-semibold text-slate-700">
-            Name
-          </label>
-          <input
-            type="text"
-            class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white"
-            placeholder="Your full name"
-          />
-        </div>
-        <div>
-          <label class="mb-1 block text-xs font-semibold text-slate-700">
-            Company / organisation
-          </label>
-          <input
-            type="text"
-            class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white"
-            placeholder="Company name"
-          />
-        </div>
-        <div>
-          <label class="mb-1 block text-xs font-semibold text-slate-700">
-            Email
-          </label>
-          <input
-            type="email"
-            class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white"
-            placeholder="you@example.com"
-          />
-        </div>
-        <div>
-          <label class="mb-1 block text-xs font-semibold text-slate-700">
-            How can we help?
-          </label>
-          <textarea
-            rows="4"
-            class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-emerald-600 focus:bg-white"
-            placeholder="Briefly describe your project, locations, and required services."
-          />
-        </div>
-        <button
-          type="button"
-          class="mt-1 w-full rounded-full bg-emerald-600 px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm shadow-emerald-300/60 hover:bg-emerald-700"
-        >
-          Submit enquiry
-        </button>
-        <p class="mt-1 text-[10px] text-slate-500">
-        </p>
-      </form>
+      <form
+  class="space-y-3 text-sm"
+  @submit="handleSubmit"
+>
+  <!-- REQUIRED -->
+  <input
+    type="hidden"
+    name="access_key"
+    value="58bbf341-9481-4df9-af44-b883074eaaeb"
+  />
+
+  <div>
+    <label class="mb-1 block text-xs font-semibold text-slate-700">
+      Name
+    </label>
+    <input
+      type="text"
+      name="name"
+      required
+      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2"
+      placeholder="Your full name"
+    />
+  </div>
+
+  <div>
+    <label class="mb-1 block text-xs font-semibold text-slate-700">
+      Company / organisation
+    </label>
+    <input
+      type="text"
+      name="company"
+      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2"
+      placeholder="Company name"
+    />
+  </div>
+
+  <div>
+    <label class="mb-1 block text-xs font-semibold text-slate-700">
+      Email
+    </label>
+    <input
+      type="email"
+      name="email"
+      required
+      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2"
+      placeholder="you@example.com"
+    />
+  </div>
+
+  <div>
+    <label class="mb-1 block text-xs font-semibold text-slate-700">
+      How can we help?
+    </label>
+    <textarea
+      rows="4"
+      name="message"
+      required
+      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2"
+      placeholder="Briefly describe your project."
+    />
+  </div>
+
+  <button
+    type="submit"
+    class="mt-1 w-full rounded-full bg-emerald-600 px-4 py-2.5
+           text-xs font-semibold uppercase tracking-wide text-white
+           hover:bg-emerald-700 transition-all duration-300"
+  >
+    Submit enquiry
+  </button>
+</form>
+
+<!-- ✅ SUCCESS POPUP -->
+<div
+  v-if="showSuccess"
+  class="fixed bottom-6 right-6 rounded-xl bg-emerald-600
+         px-4 py-3 text-xs font-semibold text-white shadow-lg"
+>
+  ✅ Request submitted successfully
+</div>
+
     </div>
   </section>
 </template>

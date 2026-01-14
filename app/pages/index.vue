@@ -252,6 +252,25 @@ const services = [
       </div>
     </section>
 
+    <!--location Map-->
+    <section class="bg-green-300 py-16 px-5">
+      <h1 class="text-4xl font-bold text-emerald-900 text-center mb-4">
+        Where To Find Us
+      </h1>
+
+      <div class="relative max-w-6xl mx-auto overflow-hidden">
+        <!-- Overlay to hide Google map top bar -->
+        <div class="absolute top-0 left-0 w-full h-16 bg-green-300 z-10"></div>
+
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=19s4r6ubn65Jvc9urP60AKX0kpzjm47U&ehbc=2E312F"
+          class="w-full h-[600px]"
+          style=""
+          loading="lazy"
+        ></iframe>
+        <div class="absolute top-0 left-0 w-full h-5 bg-green-300 z-10"></div>
+      </div>
+    </section>
     <!-- FINAL CTA -->
     <section
       class="bg-gradient-to-r from-emerald-700 to-emerald-500 py-24 text-center text-white"
@@ -280,26 +299,5 @@ const services = [
         </div>
       </div>
     </section>
-
-<section class="bg-green-300 py-16 px-5">
-  <h1 class="text-4xl font-bold text-emerald-900 text-center mb-4">
-    Where To Find Us
-  </h1>
-
-  <div class="relative max-w-6xl mx-auto overflow-hidden ">
-
-    <!-- Overlay to hide Google map top bar -->
-    <div class="absolute top-0 left-0 w-full h-16 bg-green-300 z-10"></div>
-
-    <iframe
-      src="https://www.google.com/maps/d/embed?mid=19s4r6ubn65Jvc9urP60AKX0kpzjm47U&ehbc=2E312F"
-      class="w-full h-[600px]"
-      style=""
-      loading="lazy"
-    ></iframe>
-<div class="absolute top-0 left-0 w-full h-5 bg-green-300 z-10"></div>
-  </div>
-</section>
-    <!-- FOOTER MINI SUMMARY -->
   </div>
 </template>
