@@ -26,7 +26,8 @@ const handleSubmit = async (e: Event) => {
 
 <template>
   <section
-    class="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1.1fr)] md:items-start"
+    class="mx-w-7xl mx-auto grid gap-10 px-4 py-16
+           md:grid-cols-2 md:gap-16 lg:px-8 lg:py-24"
   >
     <div>
       <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">
@@ -150,7 +151,7 @@ const handleSubmit = async (e: Event) => {
 >
   ✅ Request submitted successfully
 </div>
-
+   
     </div>
   </section>
 </template>

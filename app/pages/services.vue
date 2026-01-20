@@ -62,58 +62,71 @@ const serviceGroups = [
 </script>
 
 <template>
-  <section>
-    <div
-      class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between"
-    >
-      <div>
-        <p
-          class="text-xs font-semibold uppercase tracking-wide text-emerald-700"
-        >
-          Services
-        </p>
-        <h1
-          class="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl"
-        >
-          What we do
-        </h1>
-        <p class="mt-3 max-w-2xl text-sm text-slate-700">
-          From early-stage advisory to ongoing operations support, we deliver
-          integrated services for construction, industrial, commercial and
-          government clients.
-        </p>
-      </div>
-      <NuxtLink
-        to="/contact"
-        class="self-start rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-800 hover:border-emerald-600 hover:text-emerald-700"
+  <section class="bg-emerald-50 py-20 px-5 md:px-10">
+    <!-- Header -->
+    <div class="mb-12 max-w-5xl mx-auto text-center">
+      <p
+        class="text-sm font-semibold uppercase tracking-widest text-emerald-700"
       >
-        Discuss a project
-      </NuxtLink>
+        Services
+      </p>
+      <h1 class="mt-2 text-4xl md:text-5xl font-bold text-slate-900">
+        What We Do
+      </h1>
+      <p class="mt-4 text-slate-700 text-base md:text-lg">
+        From early-stage advisory to ongoing operations support, we deliver
+        integrated services for construction, industrial, commercial, and
+        government clients.
+      </p>
     </div>
 
-    <div class="grid gap-6 md:grid-cols-2">
+    <!-- Service Cards Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
       <article
         v-for="group in serviceGroups"
         :key="group.title"
-        class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5"
+        class="relative flex flex-col rounded-3xl border border-emerald-100 bg-white shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300"
       >
-        <h2
-          class="text-sm font-semibold uppercase tracking-wide text-slate-900"
-        >
-          {{ group.title }}
-        </h2>
-        <p class="mt-2 text-xs text-slate-600">
-          {{ group.description }}
-        </p>
-        <ul class="mt-3 space-y-1.5 text-sm text-slate-700">
-          <li v-for="item in group.items" :key="item" class="flex gap-2">
-            <span
-              class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600"
-            />
-            <span>{{ item }}</span>
-          </li>
-        </ul>
+        <!-- Top Gradient / Accent -->
+        <div
+          class="absolute -top-2 left-0 w-20 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 rounded-full"
+        ></div>
+
+        <div class="p-6 flex flex-col h-full">
+          <!-- Title -->
+          <h2 class="text-lg font-semibold text-emerald-800">
+            {{ group.title }}
+          </h2>
+          <p class="text-sm text-slate-600 ">{{ group.description }}</p>
+
+          <!-- Items List -->
+          <ul class="mt-7 space-y-2 text-sm text-slate-700">
+            <li
+              v-for="item in group.items"
+              :key="item"
+              class="flex items-start gap-3"
+            >
+              <!-- Custom icon / bullet -->
+              <span
+                class="flex-shrink-0 m h-3 w-3 rounded-full bg-emerald-600"
+              ></span>
+              <span class="text-sm text-slate-700 ">{{
+                item
+              }}</span>
+            </li>
+          </ul>
+        </div>
       </article>
+    </div>
+
+    <!-- CTA Button at Bottom -->
+    <div class="mt-12 text-center">
+      <NuxtLink
+        to="/contact"
+        class="inline-block rounded-full bg-green-600 text-white px-8 py-3 font-semibold uppercase tracking-wide hover:bg-emerald-700 transition-colors duration-300"
+      >
+        Discuss a Project
+      </NuxtLink>
     </div>
   </section>
 </template>

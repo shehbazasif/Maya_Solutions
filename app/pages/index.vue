@@ -61,9 +61,9 @@ const services = [
           <h1
             class="mb-6 text-4xl md:text-7xl lg:text-7xl font-bold leading-tight"
           >
-            Shaping Tomorrow’s <span class="text-green-400">World</span> Through
+           Solutions That ,<span class="text-green-400">Protect</span>
             <br />
-            <span class="text-green-400">Sustainable Tomorrow</span>
+            <span class="text-green-400">Innovate, </span><span>and </span> <span class="text-green-400"> Inspire</span>
           </h1>
           <h1 class="mb-8 text-2xl font-semibold leading-tight">
             We deliver smart, practical environmental solutions that promote
@@ -75,7 +75,7 @@ const services = [
           <div class="flex flex-wrap gap-4 justify-center">
             <NuxtLink
               to="/contact"
-              class="rounded-full bg-green-400 text-white-400 px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:text-white transition"
+              class="rounded-full bg-green-400 text-green-900 px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:border-white hover:border hover:text-white transition"
             >
               Contact Now!
             </NuxtLink>
