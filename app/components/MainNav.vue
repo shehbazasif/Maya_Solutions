@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
           </span>
           <span class="h-3 w-px bg-slate-600" />
           <span class="text-slate-300">
-            Environmental • Sustainability • Waste • FM • Equipment
+            Construction • Facility Management • Landscaping • FM • Environmental • Sustainability • Waste • Equipment
           </span>
         </div>
         <div class="flex items-center gap-4">
@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
               MaYa Sustainable Solutions
             </div>
             <p class="text-[11px] text-slate-500">
-              Global environmental & FM partner
+              Integrated Construction Site Support & FM
             </p>
           </div>
         </NuxtLink>

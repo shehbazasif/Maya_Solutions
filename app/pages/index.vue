@@ -25,8 +25,7 @@ const slides = [
     description:
       "Comprehensive FM and utilities services ensuring safe, functional, and compliant assets throughout project lifecycle. From preventive maintenance to operational readiness.",
     keywords: ["FM Support", "Site Utilities", "Maintenance", "Compliance"],
-    image:
-      "images/facility_management.jpg",
+    image: "images/facility_management.jpg",
   },
   {
     id: 3,
@@ -41,6 +40,20 @@ const slides = [
     ],
     image:
       "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&q=80",
+  },
+  {
+    id: 3,
+    title: "Environmental Services & Compliance",
+    description:
+      "Specialized environmental services ensuring regulatory compliance and sustainable practices. Assessments, monitoring, remediation, and reporting tailored to project needs.",
+    keywords: [
+      "environmental Services",
+      " Compliance",
+      " Monitoring",
+      " Remediation",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -77,6 +90,24 @@ const keyStats = [
 
 const services = [
   {
+    title: "Integrated Construction Site Support",
+    image: "/images/facility_management.jpg",
+    description:
+      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+  },
+  {
+    title: "Facilities Management",
+    image: "/images/facility_management.jpg",
+    description:
+      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+  },
+  {
+    title: "Facilities Management",
+    image: "/images/facility_management.jpg",
+    description:
+      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+  },
+  {
     title: "Environmental Services",
     image: "/images/Environmental-Services.jpg",
     description:
@@ -93,12 +124,6 @@ const services = [
     image: "/images/waste-management.jpg",
     description:
       "Innovative waste collection, recycling, segregation, and zero-waste compliance programs.",
-  },
-  {
-    title: "Facilities Management",
-    image: "/images/facility_management.jpg",
-    description:
-      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
   },
   {
     title: "Specialized Equipment & Support",
