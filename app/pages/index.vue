@@ -1,4 +1,74 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+
+const currentSlide = ref(0);
+let intervalId: number | null | undefined = null;
+
+const slides = [
+  {
+    id: 1,
+    title: "Construction Site Support & Finishing Works",
+    description:
+      "Expert site support for active construction and fit-out stages. From finishing works to civil rectification, we deliver coordination and execution without main contractor responsibility.",
+    keywords: [
+      "Fit-Out Works",
+      "Site Coordination",
+      "Finishing Support",
+      "Civil Works",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
+  },
+  {
+    id: 2,
+    title: "Facilities Management & Utilities Support",
+    description:
+      "Comprehensive FM and utilities services ensuring safe, functional, and compliant assets throughout project lifecycle. From preventive maintenance to operational readiness.",
+    keywords: ["FM Support", "Site Utilities", "Maintenance", "Compliance"],
+    image:
+      "images/facility_management.jpg",
+  },
+  {
+    id: 3,
+    title: "Landscaping & External Works Support",
+    description:
+      "Professional landscaping and external works aligned with construction schedules. Soft and hard landscaping, defect rectification, and seamless handover assistance.",
+    keywords: [
+      "Landscaping",
+      "External Works",
+      "Site Integration",
+      "Green Spaces",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&q=80",
+  },
+];
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % slides.length;
+};
+
+const goToSlide = (index: number) => {
+  currentSlide.value = index;
+  resetInterval();
+};
+
+const resetInterval = () => {
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+  intervalId = setInterval(nextSlide, 5000);
+};
+
+onMounted(() => {
+  intervalId = setInterval(nextSlide, 5000);
+});
+
+onUnmounted(() => {
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+});
 const keyStats = [
   { label: "Countries", value: "3+" },
   { label: "Core Service Lines", value: "5" },
@@ -26,7 +96,7 @@ const services = [
   },
   {
     title: "Facilities Management",
-    image: "/images/facilitate-management.jpg",
+    image: "/images/facility_management.jpg",
     description:
       "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
   },
@@ -42,49 +112,72 @@ const services = [
 <template>
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
-    <section
-      class="mx-w-5xl relative bg-cover bg-center text-white"
-      style="background-image: url('/images/environmental-image.jpg')"
-    >
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-gray-700 via-emerald-800/70 to-white-700/60"
-      ></div>
-
-      <div class="relative max-w-7xl mx-auto px-6 md:px-10 py-28 text-center">
-        <div data-aos="fade-up">
-          <p
-            class="mb-3 inline-flex rounded-full bg-emerald-200/20 px-4 py-1 text-xm font-semibold uppercase tracking-wide text-emerald-100"
+    <section class="relative w-full h-screen overflow-hidden">
+      <div class="relative w-full h-full">
+        <!-- Background Slides -->
+        <transition-group name="fade" tag="div" class="absolute inset-0">
+          <div
+            v-for="(slide, index) in slides"
+            :key="slide.id"
+            v-show="currentSlide === index"
+            class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            :style="{ backgroundImage: `url(${slide.image})` }"
           >
-            Engineering a Greener, Smarter Future
-          </p>
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/40"
+            ></div>
+          </div>
+        </transition-group>
 
-          <h1
-            class="mb-6 text-4xl md:text-7xl lg:text-7xl font-bold leading-tight"
+        <!-- Content -->
+        <div
+          class="relative z-10 flex flex-col justify-center items-start h-full max-w-7xl mx-auto px-12 md:px-6 text-white"
+        >
+          <transition name="slide-up" mode="out-in">
+            <div :key="currentSlide" class="mb-8">
+              <h1
+                class="text-5xl md:text-4xl sm:text-3xl font-bold leading-tight mb-6 max-w-4xl drop-shadow-lg"
+              >
+                {{ slides[currentSlide]?.title }}
+              </h1>
+              <p
+                class="text-xl md:text-lg leading-relaxed mb-6 max-w-3xl text-white/95 drop-shadow-md"
+              >
+                {{ slides[currentSlide]?.description }}
+              </p>
+              <div class="flex flex-wrap gap-3 mb-8">
+                <span
+                  v-for="keyword in slides[currentSlide]?.keywords"
+                  :key="keyword"
+                  class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 cursor-default"
+                >
+                  {{ keyword }}
+                </span>
+              </div>
+            </div>
+          </transition>
+
+          <!-- Static Button -->
+          <button
+            class="bg-gradient-to-r from-emerald-500 to-green-400 text-white px-10 py-4 text-lg font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/50 shadow-lg shadow-green-500/40"
           >
-           Solutions That ,<span class="text-green-400">Protect</span>
-            <br />
-            <span class="text-green-400">Innovate, </span><span>and </span> <span class="text-green-400"> Inspire</span>
-          </h1>
-          <h1 class="mb-8 text-2xl font-semibold leading-tight">
-            We deliver smart, practical environmental solutions that promote
-            growth while protecting the planet’s natural balance. Partner with
-            us to meet every sustainability goal and ensure long-term
-            environmental responsibility.
-          </h1>
+            Get Started
+          </button>
 
-          <div class="flex flex-wrap gap-4 justify-center">
-            <NuxtLink
-              to="/contact"
-              class="rounded-full bg-green-400 text-green-900 px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:border-white hover:border hover:text-white transition"
-            >
-              Contact Now!
-            </NuxtLink>
-            <NuxtLink
-              to="/services"
-              class="rounded-full border border-white text-white px-6 py-3 text-xl font-bold uppercase tracking-wide shadow-md hover:bg-emerald-900 hover:text-white transition"
-            >
-              Explore Services
-            </NuxtLink>
+          <!-- Slide Indicators -->
+          <div
+            class="absolute bottom-12 left-12 md:left-1/2 md:-translate-x-1/2 flex gap-4"
+          >
+            <button
+              v-for="(slide, index) in slides"
+              :key="slide.id"
+              @click="goToSlide(index)"
+              :class="[
+                'h-3 rounded-full border-2 border-white transition-all duration-300 hover:bg-white/70 hover:scale-110',
+                currentSlide === index ? 'w-10 bg-white' : 'w-3 bg-white/40',
+              ]"
+              :aria-label="`Go to slide ${index + 1}`"
+            ></button>
           </div>
         </div>
       </div>
@@ -301,3 +394,33 @@ const services = [
     </section>
   </div>
 </template>
+<style scoped>
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.6s ease;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+</style>
