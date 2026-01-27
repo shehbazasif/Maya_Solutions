@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
           </span>
           <span class="h-3 w-px bg-slate-600" />
           <span class="text-slate-300">
-            Construction • Facility Management • Landscaping • FM • Environmental • Sustainability • Waste • Equipment
+            Construction • Facility Management • Landscaping • Environmental • Sustainability • Waste • Equipment
           </span>
         </div>
         <div class="flex items-center gap-4">

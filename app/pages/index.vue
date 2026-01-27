@@ -91,21 +91,21 @@ const keyStats = [
 const services = [
   {
     title: "Integrated Construction Site Support",
-    image: "/images/facility_management.jpg",
+    image: "/images/construction-integration.jpg",
     description:
-      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+      "Expert site support for active construction and fit-out stages. From finishing works to civil rectification, we deliver coordination and execution without main contractor responsibility.",
   },
   {
     title: "Facilities Management",
     image: "/images/facility_management.jpg",
     description:
-      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+      "Professional landscaping and external works aligned with construction schedules. Soft and hard landscaping, defect rectification, and seamless handover assistance.",
   },
   {
-    title: "Facilities Management",
-    image: "/images/facility_management.jpg",
+    title: "Landscaping & External Works Support",
+    image: "/images/Landscapping-cardimages.jpg",
     description:
-      "Sustainable asset management, housekeeping, safety systems, and operational excellence.",
+      "Professional landscaping and external works aligned with construction schedules. Soft and hard landscaping, defect rectification, and seamless handover assistance.",
   },
   {
     title: "Environmental Services",
