@@ -421,7 +421,7 @@ const services = [
     </section>
 
     <!-- CORE SERVICES -->
-    <section class="bg-emerald-50 py-24 px-6 md:px-10">
+    <section class="pb-24 pt-12 px-6 md:px-10">
       <div class="max-w-7xl mx-auto text-center">
         <h2
           data-aos="fade-up"
