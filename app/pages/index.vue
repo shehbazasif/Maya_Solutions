@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 const hoveredCard = ref<string | null>(null);
 const currentSlide = ref(0);
 let intervalId: number | null | undefined = null;
-
+const activeCard = ref<number | null>(null)
 const slides = [
   {
     id: 1,
@@ -456,7 +456,206 @@ const services = [
         </div>
       </div>
     </section>
+<!-- How we Support Construction Project section -->
+   <section class="relative py-20 px-6 md:px-8 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
 
+    <div class="relative max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full mb-6 shadow-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+          </svg>
+          <span class="font-semibold text-sm tracking-wide">OUR APPROACH</span>
+        </div>
+        
+        <h2 class="text-5xl md:text-6xl font-black mb-6">
+          <span class="bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-clip-text text-transparent">
+            How We Support
+          </span>
+          <br>
+          <span class="bg-gradient-to-r from-orange-600 via-red-600 to-orange-700 bg-clip-text text-transparent">
+            Construction Projects
+          </span>
+        </h2>
+        
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          From site mobilization to final handover, we deliver comprehensive support services that keep your construction projects running smoothly and efficiently.
+        </p>
+      </div>
+
+      <!-- Support Services Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <!-- Service Card 1 -->
+        <div 
+          class="support-card group"
+          @mouseenter="activeCard = 1"
+          @mouseleave="activeCard = null"
+        >
+          <div class="card-inner">
+            <!-- Icon -->
+            <div class="icon-box bg-gradient-to-br from-blue-500 to-blue-700">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <h3 class="card-title">Site Mobilization & Setup Support</h3>
+            <p class="card-description">
+              Rapid deployment and comprehensive site establishment services to get your project started efficiently and safely.
+            </p>
+
+            <!-- Hover Indicator -->
+            <div class="card-arrow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div 
+          class="support-card group"
+          @mouseenter="activeCard = 2"
+          @mouseleave="activeCard = null"
+        >
+          <div class="card-inner">
+            <!-- Icon -->
+            <div class="icon-box bg-gradient-to-br from-green-500 to-emerald-700">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <h3 class="card-title">Finishing, FM & Landscaping Execution</h3>
+            <p class="card-description">
+              Professional execution of fit-out works, facilities management services, and landscape installations to project standards.
+            </p>
+
+            <!-- Hover Indicator -->
+            <div class="card-arrow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div 
+          class="support-card group"
+          @mouseenter="activeCard = 3"
+          @mouseleave="activeCard = null"
+        >
+          <div class="card-inner">
+            <!-- Icon -->
+            <div class="icon-box bg-gradient-to-br from-emerald-500 to-green-700">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <h3 class="card-title">Environmental & Waste Compliance Systems</h3>
+            <p class="card-description">
+              Complete environmental management and waste handling systems ensuring full regulatory compliance and sustainability.
+            </p>
+
+            <!-- Hover Indicator -->
+            <div class="card-arrow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div 
+          class="support-card group"
+          @mouseenter="activeCard = 4"
+          @mouseleave="activeCard = null"
+        >
+          <div class="card-inner">
+            <!-- Icon -->
+            <div class="icon-box bg-gradient-to-br from-orange-500 to-red-600">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <h3 class="card-title">Weekly Site Reporting & Photo Logs</h3>
+            <p class="card-description">
+              Detailed weekly documentation including progress reports, photographic records, and comprehensive site activity logs.
+            </p>
+
+            <!-- Hover Indicator -->
+            <div class="card-arrow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 5 -->
+        <div 
+          class="support-card group lg:col-span-2"
+          @mouseenter="activeCard = 5"
+          @mouseleave="activeCard = null"
+        >
+          <div class="card-inner">
+            <!-- Icon -->
+            <div class="icon-box bg-gradient-to-br from-purple-500 to-indigo-700">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+
+            <!-- Content -->
+            <h3 class="card-title">Flexible Short-Term or Long-Term Engagement</h3>
+            <p class="card-description">
+              Adaptable service packages designed to meet your project timeline, whether you need temporary support for critical phases or comprehensive long-term partnership throughout your entire construction lifecycle.
+            </p>
+
+            <!-- Hover Indicator -->
+            <div class="card-arrow">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-16 text-center">
+        <div class="inline-flex flex-col md:flex-row items-center gap-4 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 shadow-2xl">
+          <div class="text-left">
+            <h3 class="text-2xl font-bold text-white mb-2">Ready to streamline your project?</h3>
+            <p class="text-gray-300">Let's discuss how we can support your construction needs.</p>
+          </div>
+          <a 
+            href="/contact" 
+            class="cta-button whitespace-nowrap"
+          >
+            Get Started Today
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- WHY CLIENTS CHOOSE US -->
     <section
       class="relative py-24 px-6 md:px-10 bg-gradient-to-br from-white via-emerald-50 to-white"
@@ -805,6 +1004,94 @@ const services = [
 @media (max-width: 768px) {
   .card-container {
     @apply p-6;
+  }
+}
+
+.support-card {
+  @apply relative h-full;
+  perspective: 1000px;
+}
+
+.card-inner {
+  @apply relative bg-white rounded-2xl p-8 h-full flex flex-col transition-all duration-500 border-2 border-gray-100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform-style: preserve-3d;
+}
+
+.support-card:hover .card-inner {
+  @apply border-orange-200 -translate-y-2;
+  box-shadow: 0 20px 40px rgba(251, 146, 60, 0.15);
+}
+
+/* Icon Box */
+.icon-box {
+  @apply w-16 h-16 rounded-xl flex items-center justify-center mb-5 shadow-lg transition-all duration-500;
+}
+
+.support-card:hover .icon-box {
+  @apply scale-110 rotate-6 shadow-2xl;
+  animation: icon-bounce 0.6s ease;
+}
+
+@keyframes icon-bounce {
+  0%, 100% { transform: scale(1.1) rotate(6deg); }
+  50% { transform: scale(1.15) rotate(12deg); }
+}
+
+/* Card Title */
+.card-title {
+  @apply text-xl font-bold text-gray-800 mb-3 transition-colors duration-300;
+}
+
+.support-card:hover .card-title {
+  @apply bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent;
+}
+
+/* Card Description */
+.card-description {
+  @apply text-gray-600 leading-relaxed flex-grow;
+}
+
+/* Card Arrow */
+.card-arrow {
+  @apply mt-4 flex items-center gap-2 text-orange-600 font-semibold opacity-0 transform translate-x-[-10px] transition-all duration-300;
+}
+
+.support-card:hover .card-arrow {
+  @apply opacity-100 translate-x-0;
+}
+
+/* CTA Button */
+.cta-button {
+  @apply inline-flex items-center bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105;
+}
+
+.cta-button:hover {
+  @apply from-orange-600 to-red-700;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-inner {
+    @apply p-6;
+  }
+  
+  .icon-box {
+    @apply w-14 h-14;
+  }
+  
+  .card-title {
+    @apply text-lg;
+  }
+  
+  .card-description {
+    @apply text-sm;
   }
 }
 </style>
