@@ -17,7 +17,7 @@ const slides = [
       "Civil Works",
     ],
     image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
+      "/images/Construction-site-hero.jpeg",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const slides = [
       "Green Spaces",
     ],
     image:
-      "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1920&q=80",
+      "/images/landscapping-hero.jpeg",
   },
   {
     id: 3,
@@ -138,91 +138,83 @@ const services = [
   <div class="text-slate-800 overflow-hidden">
     <!-- HERO SECTION -->
     <section class="relative w-full h-screen overflow-hidden">
-      <div class="relative w-full h-full">
-        <!-- Background Slides -->
-        <transition-group name="fade" tag="div" class="absolute inset-0">
-          <div
+    <div class="relative w-full h-full">
+      <!-- Background Slides -->
+      <transition-group name="fade" tag="div" class="absolute inset-0">
+        <div
+          v-for="(slide, index) in slides"
+          :key="slide.id"
+          v-show="currentSlide === index"
+          class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          :style="{ backgroundImage: `url(${slide.image})` }"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/40"></div>
+        </div>
+      </transition-group>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 text-white pt-20 md:pt-0">
+        <transition name="slide-up" mode="out-in">
+          <div :key="currentSlide" class="mb-6 md:mb-8">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 max-w-4xl drop-shadow-lg">
+              {{ slides[currentSlide]?.title }}
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-4 md:mb-6 max-w-3xl text-white/95 drop-shadow-md">
+              {{ slides[currentSlide]?.description }}
+            </p>
+            <div class="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8">
+              <span
+                v-for="keyword in slides[currentSlide]?.keywords"
+                :key="keyword"
+                class="bg-white/20 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 cursor-default"
+              >
+                {{ keyword }}
+              </span>
+            </div>
+          </div>
+        </transition>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp Us
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:border-white/50 px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg"
+          >
+            Get Quotation
+          </a>
+        </div>
+
+        <!-- Bottom Info Badge -->
+        <span class="inline-block bg-white/20 mb-12 backdrop-blur-md px-4 py-1 md:px-5 md:py-2.5 rounded-full text-[10px] md:text-sm font- border border-white/30 transition-all duration-300 hover:bg-white/30 cursor-default max-w-fit">
+          Riyadh‑based | Fast mobilization | Construction‑focused | VAT compliant
+        </span>
+
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-6 md:bottom-12 left-6 md:left-12 lg:left-1/2 lg:-translate-x-1/2 flex gap-3 md:gap-4">
+          <button
             v-for="(slide, index) in slides"
             :key="slide.id"
-            v-show="currentSlide === index"
-            class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            :style="{ backgroundImage: `url(${slide.image})` }"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/40"
-            ></div>
-          </div>
-        </transition-group>
-
-        <!-- Content -->
-        <div
-          class="relative z-10 flex flex-col justify-center items-start h-full max-w-7xl mx-auto px-12 md:px-6 text-white"
-        >
-          <transition name="slide-up" mode="out-in">
-            <div :key="currentSlide" class="mb-8">
-              <h1
-                class="text-5xl md:text-4xl sm:text-3xl font-bold leading-tight mb-6 max-w-4xl drop-shadow-lg"
-              >
-                {{ slides[currentSlide]?.title }}
-              </h1>
-              <p
-                class="text-xl md:text-lg leading-relaxed mb-6 max-w-3xl text-white/95 drop-shadow-md"
-              >
-                {{ slides[currentSlide]?.description }}
-              </p>
-              <div class="flex flex-wrap gap-3 mb-8">
-                <span
-                  v-for="keyword in slides[currentSlide]?.keywords"
-                  :key="keyword"
-                  class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 cursor-default"
-                >
-                  {{ keyword }}
-                </span>
-              </div>
-            </div>
-          </transition>
-
-          <!-- Static Button -->
-          <div class="flex gap-6">
-            <button
-              class="bg-gradient-to-r from-emerald-500 to-green-400 text-white px-10 py-4 text-lg font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/50 shadow-lg shadow-green-500/40"
-            >
-              WhatsApp US
-            </button>
-            <div class="flex flex-wrap gap-3 mb-8">
-              
-            </div>
-            <button
-              class="bg-gradient-to-r from-emerald-500 to-green-400 text-white px-10 py-4 text-lg font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-500/50 shadow-lg shadow-green-500/40"
-            >
-              Get Qoutation
-            </button>
-          </div>
-          <span
-                class="mt-6 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium border border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 cursor-default"
-              >
-                Riyadh‑based | Fast mobilization | Construction‑focused | VAT
-                compliant
-              </span>
-
-          <!-- Slide Indicators -->
-          <div
-            class="absolute bottom-12 left-12 md:left-1/2 md:-translate-x-1/2 flex gap-4"
-          >
-            <button
-              v-for="(slide, index) in slides"
-              :key="slide.id"
-              @click="goToSlide(index)"
-              :class="[
-                'h-3 rounded-full border-2 border-white transition-all duration-300 hover:bg-white/70 hover:scale-110',
-                currentSlide === index ? 'w-10 bg-white' : 'w-3 bg-white/40',
-              ]"
-              :aria-label="`Go to slide ${index + 1}`"
-            ></button>
-          </div>
+            @click="goToSlide(index)"
+            :class="[
+              'h-2 md:h-3 rounded-full border-2 border-white transition-all duration-300 hover:bg-white/70 hover:scale-110',
+              currentSlide === index ? 'w-8 md:w-10 bg-white' : 'w-2 md:w-3 bg-white/40',
+            ]"
+            :aria-label="`Go to slide ${index + 1}`"
+          ></button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
     <!-- ABOUT -->
     <section
       class="relative max-w-7xl mx-auto py-20 px-6 md:px-8 overflow-hidden"
@@ -310,11 +302,11 @@ const services = [
               </div>
 
               <!-- CTA Button -->
-              <a href="/who-we-are" class="cta-button group-mission">
-                <span class="relative z-10 flex items-center gap-2">
+              <a href="/who-we-are" class="w-60 bg-emerald-600 hover:bg-emerald-700 text-white text-center py-4 px-7 rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg">
+                <span class="z-10 flex items-center gap-2">
                   Explore More
                   <svg
-                    class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    class="h-5 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -392,7 +384,7 @@ const services = [
               </div>
 
               <!-- CTA Button -->
-              <a href="/who-we-are" class="cta-button group-vision">
+              <a href="/who-we-are" class="w-60 bg-blue-600 hover:bg-blue-700 text-white text-center py-4 px-7 rounded-full font-semibold uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg">
                 <span class="relative z-10 flex items-center gap-2">
                   Explore More
                   <svg
