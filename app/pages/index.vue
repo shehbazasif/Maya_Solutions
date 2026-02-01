@@ -39,7 +39,7 @@ const slides = [
       "Green Spaces",
     ],
     image:
-      "/images/landscapping-hero.jpeg",
+      "images/landscaping-hero.jpeg",
   },
   {
     id: 3,
@@ -55,6 +55,20 @@ const slides = [
     image:
       "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+  {
+    id: 3,
+    title: "Sustainability & ESG Consulting",
+    description:
+      " Specialized Sustainability and ESG services promoting responsible growth. Strategy development, certification support, carbon management, and reporting aligned with global standards.",
+    keywords: [
+      "Sustainability",
+      "ESG Consulting",
+      "Carbon Management",
+      "Reporting",
+    ],
+    image:
+      "images/esg-hero.jpg",
+  }
 ];
 
 const nextSlide = () => {
