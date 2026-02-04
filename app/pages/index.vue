@@ -191,7 +191,7 @@ const services = [
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
           <a
-            href="https://wa.me/"
+            href="https://wa.me/966531008586"
             target="_blank"
             class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg"
           >
@@ -201,7 +201,7 @@ const services = [
             WhatsApp Us
           </a>
           <a
-            href="#contact"
+            href="/contact"
             class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:border-white/50 px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold rounded-full uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl shadow-lg"
           >
             Get Quotation
