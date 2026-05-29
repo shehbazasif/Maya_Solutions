@@ -1,4 +1,18 @@
 <script setup lang="ts">
+// SEO
+useSeoMeta({
+  title: "Our Services",
+  description:
+    "Comprehensive construction site support, facilities management, landscaping, environmental compliance, and utility services tailored to your project needs.",
+  keywords:
+    "construction services, facilities management, FM services, site support, landscaping, environmental services, finishing works",
+  ogTitle: "Professional Services | Maya Solutions",
+  ogDescription:
+    "Expert construction site support, FM services, landscaping, and environmental compliance solutions.",
+  ogImage: "/images/og-services.jpg",
+  canonical: "https://www.mayassc.com/services",
+});
+
 const serviceGroups = [
   {
     title: "Construction & Finishing Works Support",
@@ -46,8 +60,7 @@ const serviceGroups = [
     title: "Environmental & Sustainability Compliance",
     description:
       "End-to-end environmental support and practical sustainability advisory integrated into everyday operations.",
-    image:
-      "images/Environmental-Services.jpg",
+    image: "images/Environmental-Services.jpg",
     items: [
       "Environmental permitting and compliance monitoring",
       "ESIA / EIA studies and reporting",
@@ -75,8 +88,7 @@ const serviceGroups = [
     title: "Equipment & Operational Support",
     description:
       "Reliable equipment and manpower tailored to project and operational needs.",
-    image:
-      "images/equipment-services.jpg",
+    image: "images/equipment-services.jpg",
     items: [
       "Construction machinery & equipment rental",
       "Water tankers, sewage tankers, loaders, forklifts",
@@ -307,3 +319,9 @@ const serviceGroups = [
   }
 }
 </style>
+
+useHead({ title: 'Construction & FM Services | Maya Solutions', meta: [ { name:
+'description', content: 'Expert site support, facilities management, and
+construction services...' }, { property: 'og:title', content: 'Construction & FM
+Services | Maya Solutions' }, { property: 'og:description', content: '...' }, ]
+})
