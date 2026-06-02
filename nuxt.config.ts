@@ -1,8 +1,10 @@
 // nuxt.config.ts
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default ({
+
+export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  ssr: true,
 
   devServer: {
     port: 3005,
@@ -44,11 +46,17 @@ export default ({
     },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/fonts", "@vueuse/nuxt", "@hypernym/nuxt-anime", "@nuxtjs/sitemap", "@nuxt/image"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxt/fonts",
+    "@vueuse/nuxt",
+    "@hypernym/nuxt-anime",
+    "@nuxtjs/sitemap",
+    "@nuxt/image",
+  ],
 
   // Sitemap configuration
   sitemap: {
-    sources: ["/api/sitemap"],
     urls: [
       {
         loc: "/",
@@ -96,7 +104,6 @@ export default ({
         priority: 0.5,
       },
     ],
-    sitemapUrl: "/sitemap.xml",
     credits: false,
   },
 });
