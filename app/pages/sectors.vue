@@ -12,7 +12,10 @@ useSeoMeta({
   ogDescription:
     "Expertise across construction, industrial, government, and commercial sectors.",
   ogImage: "/images/og-sectors.jpg",
-  canonical: "https://www.mayassc.com/sectors",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/sectors" }],
 });
 
 const hoveredSector = ref<number | null>(null);

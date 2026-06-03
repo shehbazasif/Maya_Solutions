@@ -12,7 +12,10 @@ useSeoMeta({
   ogDescription:
     "Discover our mission, capabilities, and commitment to construction excellence.",
   ogImage: "/images/og-about.jpg",
-  canonical: "https://www.mayassc.com/who-we-are",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/who-we-are" }],
 });
 
 const activeTab = ref(0);

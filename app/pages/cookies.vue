@@ -1,12 +1,16 @@
 <script setup lang="ts">
 // SEO
 useSeoMeta({
-  title: 'Cookies Policy',
-  description: 'Maya Solutions cookies policy - information about how we use cookies and similar technologies on our website.',
-  keywords: 'cookies, cookie policy, tracking, analytics',
-  ogTitle: 'Cookies Policy | Maya Solutions',
-  ogDescription: 'Information about cookies and tracking technologies we use.',
-  canonical: 'https://www.mayassc.com/cookies'
+  title: "Cookies Policy",
+  description:
+    "Maya Solutions cookies policy - information about how we use cookies and similar technologies on our website.",
+  keywords: "cookies, cookie policy, tracking, analytics",
+  ogTitle: "Cookies Policy | Maya Solutions",
+  ogDescription: "Information about cookies and tracking technologies we use.",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/cookies" }],
 });
 </script>
 

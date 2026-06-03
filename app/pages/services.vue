@@ -10,7 +10,10 @@ useSeoMeta({
   ogDescription:
     "Expert construction site support, FM services, landscaping, and environmental compliance solutions.",
   ogImage: "/images/og-services.jpg",
-  canonical: "https://www.mayassc.com/services",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/services" }],
 });
 
 const serviceGroups = [

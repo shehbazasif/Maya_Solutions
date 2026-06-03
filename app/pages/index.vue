@@ -1,6 +1,97 @@
 <script setup lang="ts">
+import { ref, markRaw, type Component } from "vue";
+
 const hoveredReason = ref<number | null>(null);
 const hoveredIndustry = ref<number | null>(null);
+
+// SVG Icons as inline components
+const IconISO14001 = markRaw({
+  name: "IconISO14001",
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.3"/>
+      <path d="M7 12h10M12 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  `,
+});
+
+const IconISO9001 = markRaw({
+  name: "IconISO9001",
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 9v8M12 9v8M16 9v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M4 5h16v2H4z" fill="currentColor" opacity="0.2"/>
+    </svg>
+  `,
+});
+
+const IconISO45001 = markRaw({
+  name: "IconISO45001",
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L20 6v6c0 5.55-4 10.74-8 12-4-1.26-8-6.45-8-12V6l8-4z" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M10 13l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `,
+});
+
+const IconISO = markRaw({
+  name: "IconISO",
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M7 9h10M7 13h10M7 17h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M3 8h18" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+    </svg>
+  `,
+});
+
+// TypeScript interface for certifications
+interface Certification {
+  id: string;
+  isoNumber: string;
+  title: string;
+  description: string;
+  trust: string;
+}
+
+// Certification data
+const certifications: Certification[] = [
+  {
+    id: "iso-14001",
+    isoNumber: "ISO 14001:2015",
+    title: "Environmental Management",
+    description:
+      "Systematic approach to managing environmental impact and sustainability practices.",
+    trust: "Globally Recognized",
+  },
+  {
+    id: "iso-9001",
+    isoNumber: "ISO 9001:2015",
+    title: "Quality Management",
+    description:
+      "Comprehensive quality assurance across processes ensuring consistent excellence.",
+    trust: "Compliance Driven",
+  },
+  {
+    id: "iso-45001",
+    isoNumber: "ISO 45001:2018",
+    title: "Occupational Health & Safety",
+    description:
+      "Proactive workplace safety management protecting employee wellbeing and rights.",
+    trust: "Industry Approved",
+  },
+  {
+    id: "iso-certified",
+    isoNumber: "ISO Certified",
+    title: "Integrated Compliance",
+    description:
+      "Holistic certification integrating all standards into unified operational framework.",
+    trust: "Continuously Audited",
+  },
+] as const;
 
 const reasons = [
   {
@@ -134,7 +225,10 @@ useSeoMeta({
   ogDescription:
     "Providing comprehensive site support, facilities management, and environmental solutions for construction projects.",
   ogImage: "/images/og-home.jpg",
-  canonical: "https://www.mayassc.com/",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/" }],
 });
 
 const hoveredCard = ref<string | null>(null);
@@ -395,9 +489,297 @@ const services = [
           class="absolute top-1/2 left-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl animate-pulse-slow"
         ></div>
       </div>
+      <!--Certifications Section-->
+      <section
+        class="relative w-full overflow-hidden bg-slate-950 py-20 lg:py-32"
+      >
+        <!-- Animated background gradient blobs -->
+        <div class="absolute inset-0 overflow-hidden">
+          <!-- Top-left floating blob -->
+          <div
+            class="absolute -top-40 -left-40 w-96 h-96 rounded-full opacity-20"
+            style="
+              background: radial-gradient(
+                circle,
+                rgba(34, 197, 94, 0.4),
+                transparent
+              );
+              filter: blur(60px);
+              animation: float 15s ease-in-out infinite;
+            "
+          ></div>
 
+          <!-- Bottom-right floating blob -->
+          <div
+            class="absolute -bottom-32 -right-32 w-80 h-80 rounded-full opacity-15"
+            style="
+              background: radial-gradient(
+                circle,
+                rgba(20, 184, 166, 0.3),
+                transparent
+              );
+              filter: blur(70px);
+              animation: float 20s ease-in-out infinite reverse;
+            "
+          ></div>
+
+          <!-- Center glow effect -->
+          <div
+            class="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 opacity-10"
+            style="
+              background: radial-gradient(
+                circle,
+                rgba(74, 222, 128, 0.15),
+                transparent
+              );
+              filter: blur(100px);
+            "
+          ></div>
+
+          <!-- Animated grid pattern overlay -->
+          <div
+            class="absolute inset-0 opacity-5"
+            style="
+              backgroundimage:
+                linear-gradient(
+                  0deg,
+                  transparent 24%,
+                  rgba(34, 197, 94, 0.05) 25%,
+                  rgba(34, 197, 94, 0.05) 26%,
+                  transparent 27%,
+                  transparent 74%,
+                  rgba(34, 197, 94, 0.05) 75%,
+                  rgba(34, 197, 94, 0.05) 76%,
+                  transparent 77%,
+                  transparent
+                ),
+                linear-gradient(
+                  90deg,
+                  transparent 24%,
+                  rgba(34, 197, 94, 0.05) 25%,
+                  rgba(34, 197, 94, 0.05) 26%,
+                  transparent 27%,
+                  transparent 74%,
+                  rgba(34, 197, 94, 0.05) 75%,
+                  rgba(34, 197, 94, 0.05) 76%,
+                  transparent 77%,
+                  transparent
+                );
+              backgroundsize: 60px 60px;
+            "
+          ></div>
+        </div>
+
+        <!-- Content container -->
+        <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <!-- Premium badge -->
+          <div class="mb-8 flex justify-center">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border border-emerald-500/30 bg-emerald-950/30 hover:bg-emerald-950/50 transition-colors duration-300"
+              style="box-shadow: 0 0 20px rgba(34, 197, 94, 0.15)"
+            >
+              <span
+                class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+              ></span>
+              <span
+                class="text-xs uppercase tracking-widest font-semibold text-emerald-300"
+              >
+                International Standards & Compliance
+              </span>
+            </div>
+          </div>
+
+          <!-- Main heading and description -->
+          <div class="text-center mb-16 lg:mb-20">
+            <h2
+              class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  #ffffff 0%,
+                  #e0f2fe 50%,
+                  #a7f3d0 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              "
+            >
+              Certified For Quality, Safety & Sustainability
+            </h2>
+            <p
+              class="mx-auto max-w-2xl text-lg text-slate-300 leading-relaxed font-light"
+            >
+              We follow internationally recognized ISO standards to ensure
+              operational excellence, environmental responsibility, workplace
+              safety, and quality management across all services.
+            </p>
+          </div>
+
+          <!-- Certifications grid -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16"
+          >
+            <transition-group
+              name="cert-list"
+              tag="div"
+              class="contents"
+              appear
+            >
+              <div
+                v-for="(cert, index) in certifications"
+                :key="cert.id"
+                class="group relative"
+                :style="{ animationDelay: `${index * 100}ms` }"
+              >
+                <!-- Glowing border effect on hover -->
+                <div
+                  class="absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  :style="{
+                    background: `linear-gradient(135deg, rgba(34, 197, 94, 0.5), rgba(20, 184, 166, 0.3))`,
+                    filter: 'blur(8px)',
+                  }"
+                ></div>
+
+                <!-- Card background with glassmorphism -->
+                <div
+                  class="relative h-full rounded-2xl border border-slate-700/50 backdrop-blur-xl bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/40 p-8 transition-all duration-500 group-hover:border-emerald-500/60 overflow-hidden"
+                  style="box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3)"
+                >
+                  <!-- Inner glow on hover -->
+                  <div
+                    class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    :style="{
+                      background: `radial-gradient(circle at top right, rgba(34, 197, 94, 0.1), transparent)`,
+                    }"
+                  ></div>
+
+                  <!-- Content -->
+                  <div class="relative z-10 flex flex-col h-full">
+                    <!-- Icon -->
+
+                    <!-- ISO Number -->
+                    <div class="mb-2">
+                      <p
+                        class="text-xs uppercase tracking-widest font-bold text-emerald-400 mb-1"
+                      >
+                        {{ cert.isoNumber }}
+                      </p>
+                    </div>
+
+                    <!-- Title -->
+                    <h3
+                      class="text-xl font-semibold text-white mb-3 leading-snug"
+                    >
+                      {{ cert.title }}
+                    </h3>
+
+                    <!-- Description -->
+                    <p
+                      class="text-sm text-slate-400 mb-4 flex-grow leading-relaxed"
+                    >
+                      {{ cert.description }}
+                    </p>
+
+                    <!-- Trust indicator -->
+                    <div
+                      class="flex items-center gap-2 pt-4 border-t border-slate-700/50 transition-all duration-500 group-hover:border-emerald-500/30"
+                    >
+                      <span
+                        class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"
+                      ></span>
+                      <span class="text-xs text-emerald-300 font-medium">
+                        {{ cert.trust }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </transition-group>
+          </div>
+
+          <!-- Trust line / Marquee effect -->
+          <div
+            class="relative overflow-hidden rounded-xl border border-slate-700/50 bg-slate-900/50 backdrop-blur-sm py-4 px-6"
+            style="box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2)"
+          >
+            <div class="flex items-center gap-8">
+              <div
+                class="flex items-center gap-8 whitespace-nowrap animate-scroll"
+              >
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Globally Recognized Standards
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Compliance Driven
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Industry Approved
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Continuously Audited
+                </span>
+
+                <!-- Duplicate for seamless loop -->
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Globally Recognized Standards
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Compliance Driven
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Industry Approved
+                </span>
+                <span
+                  class="text-sm font-medium text-slate-400 flex items-center gap-2"
+                >
+                  <span
+                    class="inline-block w-1 h-1 rounded-full bg-emerald-500"
+                  ></span>
+                  Continuously Audited
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Section Header -->
-      <div class="relative text-center mb-16">
+      <div class="relative text-center mb-16 mt-16">
         <h1 class="text-6xl md:text-7xl font-black mb-4 font-serif">
           <span
             class="bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent"

@@ -18,6 +18,9 @@ useSeoMeta({
   keywords: "privacy, privacy policy, data protection, GDPR",
   ogTitle: "Privacy Policy | Maya Solutions",
   ogDescription: "Our commitment to protecting your privacy.",
-  canonical: "https://www.mayassc.com/privacy",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/privacy" }],
 });
 </script>

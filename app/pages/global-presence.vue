@@ -12,7 +12,10 @@ useSeoMeta({
   ogDescription:
     "Operating worldwide - Saudi Arabia, UK, and USA with local expertise.",
   ogImage: "/images/og-global.jpg",
-  canonical: "https://www.mayassc.com/global-presence",
+});
+
+useHead({
+  link: [{ rel: "canonical", href: "https://www.mayassc.com/global-presence" }],
 });
 
 const activeLocation = ref<number | null>(null);

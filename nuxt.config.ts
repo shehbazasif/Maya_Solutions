@@ -7,7 +7,18 @@ export default defineNuxtConfig({
   ssr: true,
 
   devServer: {
+    host: "localhost",
     port: 3005,
+  },
+
+  vite: {
+    server: {
+      hmr: {
+        protocol: "ws",
+        port: 24678,
+        clientPort: 24678,
+      },
+    },
   },
 
   // Global app head configuration
