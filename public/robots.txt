@@ -1,23 +1,28 @@
-#GEO Optimized: All major AI crawlers are allowed
+# GEO optimized: all major AI crawlers are allowed.
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.js$
+Crawl-delay: 1
 
- #── Google ─────────────────────────────
+# Google
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
- #── Bing / Microsoft Copilot ───────────
+# Bing / Microsoft Copilot
 User-agent: Bingbot
 Allow: /
 
 User-agent: msnbot
 Allow: /
 
- #── OpenAI / ChatGPT ───────────────────
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
@@ -27,30 +32,30 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# ── Anthropic / Claude ─────────────────
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-# ── Google Gemini ──────────────────────
+# Google Gemini
 User-agent: Google-Extended
 Allow: /
 
-# ── Perplexity ─────────────────────────
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-# ── Meta AI ────────────────────────────
+# Meta AI
 User-agent: FacebookBot
 Allow: /
 
-# ── Apple ──────────────────────────────
+# Apple
 User-agent: Applebot
 Allow: /
 
-# ── Common SEO crawlers ────────────────
+# Common SEO crawlers
 User-agent: Semrushbot
 Allow: /
 
@@ -58,4 +63,4 @@ User-agent: AhrefsBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://mayassc.com/sitemap.xml
+Sitemap: https://www.mayassc.com/sitemap.xml
