@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, markRaw, type Component } from "vue";
+import { ref, markRaw, onMounted, onUnmounted } from "vue";
 
 const hoveredReason = ref<number | null>(null);
 const hoveredIndustry = ref<number | null>(null);
@@ -232,7 +232,7 @@ useHead({
   script: [
     {
       type: "application/ld+json",
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "Maya Solution Sustainable",
@@ -254,7 +254,7 @@ useHead({
 
 const hoveredCard = ref<string | null>(null);
 const currentSlide = ref(0);
-let intervalId: number | null | undefined = null;
+let intervalId: ReturnType<typeof setInterval> | null = null;
 const activeCard = ref<number | null>(null);
 const slides = [
   {
@@ -561,7 +561,7 @@ const services = [
           <div
             class="absolute inset-0 opacity-5"
             style="
-              backgroundimage:
+              background-image:
                 linear-gradient(
                   0deg,
                   transparent 24%,
@@ -586,7 +586,7 @@ const services = [
                   transparent 77%,
                   transparent
                 );
-              backgroundsize: 60px 60px;
+              background-size: 60px 60px;
             "
           ></div>
         </div>
@@ -1844,6 +1844,9 @@ const services = [
   animation: gradient-shift 3s ease infinite;
   padding: 2px;
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
