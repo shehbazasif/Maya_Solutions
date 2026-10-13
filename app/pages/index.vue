@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, markRaw, type Component } from "vue";
+import { ref, markRaw, onMounted, onUnmounted } from "vue";
 
 const hoveredReason = ref<number | null>(null);
 const hoveredIndustry = ref<number | null>(null);
@@ -216,24 +216,45 @@ const locations = [
 
 // SEO
 useSeoMeta({
-  title: "Maya Solutions - Construction, FM & Environmental Services",
+  title: "Maya Solution Sustainable | Integrated Construction & ESG Support",
   description:
-    "Expert site support, facilities management, landscaping, and environmental compliance services for construction and infrastructure projects worldwide.",
+    "Maya Solution Sustainable offers certified construction site support, facilities management, waste management, environmental compliance, and global ESG consultancy.",
   keywords:
-    "construction services, facilities management, site support, landscaping, environmental compliance, finishing works, FM services",
-  ogTitle: "Maya Solutions - Professional Construction & FM Services",
+    "construction services, facilities management, site support, landscaping, environmental compliance, finishing works, FM services, ESG consulting, waste management, LEED, Mostadam",
+  ogTitle: "Maya Solution Sustainable",
   ogDescription:
-    "Providing comprehensive site support, facilities management, and environmental solutions for construction projects.",
+    "Providing environmental compliance, specialized equipment, and structural site support across 3+ countries.",
   ogImage: "/images/og-home.jpg",
 });
 
 useHead({
   link: [{ rel: "canonical", href: "https://www.mayassc.com/" }],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Maya Solution Sustainable",
+        url: "https://www.mayassc.com/",
+        description:
+          "Specialized provider for integrated construction site support, landscaping, waste management, and corporate ESG compliance solutions.",
+        knowsAbout: [
+          "Integrated Construction Support",
+          "Facilities Management",
+          "Environmental Services & Audits",
+          "Sustainability & ESG Strategy",
+          "Waste Management Compliance",
+          "LEED and Mostadam Certification",
+        ],
+      }),
+    },
+  ],
 });
 
 const hoveredCard = ref<string | null>(null);
 const currentSlide = ref(0);
-let intervalId: number | null | undefined = null;
+let intervalId: ReturnType<typeof setInterval> | null = null;
 const activeCard = ref<number | null>(null);
 const slides = [
   {
@@ -540,7 +561,7 @@ const services = [
           <div
             class="absolute inset-0 opacity-5"
             style="
-              backgroundimage:
+              background-image:
                 linear-gradient(
                   0deg,
                   transparent 24%,
@@ -565,7 +586,7 @@ const services = [
                   transparent 77%,
                   transparent
                 );
-              backgroundsize: 60px 60px;
+              background-size: 60px 60px;
             "
           ></div>
         </div>
@@ -1823,6 +1844,9 @@ const services = [
   animation: gradient-shift 3s ease infinite;
   padding: 2px;
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;

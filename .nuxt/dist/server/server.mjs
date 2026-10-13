@@ -1,0 +1,1 @@
+export { default } from "file:///C:/my/dev/Maya_Solutions/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
